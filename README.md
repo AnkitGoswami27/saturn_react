@@ -1,12 +1,38 @@
-# React + Vite
+# Hero Section with Animated Text and Image Background
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project modifies the Hero section of a React website by adding professional UI animations to improve the visual experience. The enhancements include animated text effects and background image transitions using GSAP (GreenSock Animation Platform).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Animated Text Effect ("EDGE")
+- The word "SATURN" dynamically displays the word **EDGE** letter-by-letter.
+- This is achieved using **GSAP TextPlugin**, allowing smooth typing and erasing animations.
+- The animation loops infinitely to keep the section interactive and eye-catching.
 
-## Expanding the ESLint configuration
+### 2. Animated Background Image
+- A professional office image (`Pexels`) is used as the background on the right side of the Hero section.
+- The image animates by sliding **from top to bottom** on page load.
+- Once in place, the image **remains visible** and does not interfere with the main content (text/buttons).
+- The image is restricted to the Hero section height to maintain layout consistency.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+- **React.js**: Component-based architecture.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **GSAP**: JavaScript animation library for high-performance animations.
+- **TextPlugin**: A GSAP plugin used to animate text changes.
+
+## File Modified
+
+### `Hero.jsx`
+Key changes:
+- Added `useRef` hooks for image and text DOM elements.
+- Applied `gsap.fromTo()` to animate the image on initial page load.
+- Used `gsap.timeline()` and `TextPlugin` to animate the "EDGE" text.
+- Ensured responsiveness and compatibility with Tailwind CSS layout.
+
+## How to Use
+
+1. Clone the repository or copy the Hero component code.
+2. Make sure `gsap` is installed:
+   ```bash
+   npm install gsap
